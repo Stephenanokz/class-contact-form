@@ -1,13 +1,13 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const Contact = require('./model.js');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
 
 async function connectDB() {
     try {
